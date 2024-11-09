@@ -15,18 +15,12 @@ export default function Layout({}: Props) {
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: theme.colorGreen }}>
       <Tabs.Screen
-        name="index"
+        name="(home)"
         options={{
           title: "Home",
           tabBarIcon: ({ color, size }) => <Entypo name="leaf" size={size} color={color} />,
           tabBarShowLabel: false,
-          headerRight: () => (
-            <Link href="/new" asChild>
-              <Pressable hitSlop={20} style={{ marginRight: 18 }}>
-                <AntDesign name="pluscircleo" size={24} color={theme.colorGreen} />
-              </Pressable>
-            </Link>
-          ),
+          headerShown: false,
         }}
       />
       <Tabs.Screen
