@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useNavigation, useRouter } from "expo-router";
-import { View, Text, StyleSheet, Pressable, Alert } from "react-native";
+import { View, Text, StyleSheet, Pressable, Alert, Linking } from "react-native";
 import { differenceInCalendarDays, format } from "date-fns";
 import { theme } from "@/theme";
 import { useEffect } from "react";
@@ -47,6 +47,15 @@ export default function PlantDetails() {
       { text: "Cancel", style: "cancel" },
     ]);
   };
+
+  useEffect(() => {
+    const getInitialRoute = async () => {
+      const url = await Linking.getInitialURL();
+      console.log(url);
+    };
+
+    getInitialRoute();
+  }, []);
 
   if (!plant) {
     return (

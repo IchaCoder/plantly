@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Stack } from "expo-router";
-import { Pressable } from "react-native";
+import { Linking, Pressable } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { theme } from "@/theme";
+
+// To set index as underlying screen in order to get the back button
+// Especially on ios, the back button is not shown if the initial route is not set
+export const unstable_settings = {
+  initialRoutName: "index",
+};
 
 const Layout = () => {
   return (
